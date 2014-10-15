@@ -64,7 +64,13 @@ public class Picture
         sun.makeVisible();
         sun.slowMoveVertical(200);
         
+        sun.slowMoveVertical(130);
         
+        campo.changeColor ("black");
+        wall.changeColor ("black");
+        roof.changeColor ("black");
+        sun.changeColor ("black");
+        window.changeColor ("white");
      
     }
 

@@ -16,7 +16,7 @@ public class Picture
     private Triangle roof;
     private Circle campo;
     private Circle sun;
-    
+    private Person hombre;
     /**
      * Constructor for objects of class Picture
      */
@@ -62,15 +62,14 @@ public class Picture
         sun.moveVertical(-40);
         sun.changeSize(80);
         sun.makeVisible();
-        sun.slowMoveVertical(200);
-        
-        sun.slowMoveVertical(130);
         
         campo.changeColor ("black");
         wall.changeColor ("black");
         roof.changeColor ("black");
         sun.changeColor ("black");
         window.changeColor ("white");
+        
+       
      
     }
 
@@ -87,7 +86,32 @@ public class Picture
             sun.changeColor("black");
         }
     }
-
+    /**
+     * mover sol
+     */
+    public void moveSun()
+    {
+        if (wall != null)   // only if it's painted already...
+        {
+            sun.slowMoveVertical(150);
+            wall.changeColor("black");
+            window.changeColor("white");
+            roof.changeColor("black");
+            sun.changeColor("black");
+        }
+    }
+    /**
+     * mover hombre
+     */
+    public void moveMan()
+    {
+       
+        hombre = new Person();
+        hombre.moveHorizontal(-200);
+        hombre.makeVisible();
+        hombre.slowMoveHorizontal(60);  
+        
+    }
     /**
      * Change this picture to use color display
      */
